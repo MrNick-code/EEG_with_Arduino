@@ -1,4 +1,3 @@
-// WARNING: If you intend to run this in Arduino software, edit the file extension --> Instead of .cpp, use .ino 
 #include <arduinoFFT.h>
 #include <Wire.h>
 
