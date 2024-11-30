@@ -13,20 +13,26 @@ double vReal[samples];              // Real values Array
 double vImag[samples];              // Imaginary values Array (start: 0)
 
 void setup() {
+  
   Serial.begin(9600);
 
   pinMode(muxControlPin, OUTPUT); // Define MUX control pins as output
+  
 }
 
 void loop() {
+  
   for (int channel = 0; channel < numChannels; channel++) {
+    
     selectChannel(channel); // Select deired MUX channel
 
     // Colect samples for FFT
     for (int i = 0; i < samples; i++) {
+      
       vReal[i] = analogRead(analogPin);
       vImag[i] = 0;
       delay(1000 / samplingFrequency); // Sampling rate
+      
     }
 
     FFT.windowing(vReal, samples, FFT_WIN_TYP_HAMMING, FFT_FORWARD);
@@ -48,6 +54,7 @@ void loop() {
 
     delay(100);  // Delay between signal's read
   }
+  
 }
 
 // Function to select MUX channel
@@ -57,15 +64,26 @@ void selectChannel(int channel) {
 
 // Function to classify the brain wave
 String classifyWave(double frequency) {
+  
   if (frequency >= 0.5 && frequency < 4.0) {
     return "Delta (0.5-4 Hz)";
-  } else if (frequency >= 4.0 && frequency < 8.0) {
+  } 
+    
+  else if (frequency >= 4.0 && frequency < 8.0) {
     return "Theta (4-8 Hz)";
-  } else if (frequency >= 8.0 && frequency < 13.0) {
-    return "Alpha (8-13 Hz)";
-  } else if (frequency >= 13.0 && frequency < 30.0) {
-    return "Beta (13-30 Hz)";
-  } else {
-    return "Gamma (>30 Hz)";
   }
+  
+  else if (frequency >= 8.0 && frequency < 13.0) {
+    return "Alpha (8-13 Hz)";
+  }
+  
+  else if (frequency >= 13.0 && frequency < 30.0) {
+    return "Beta (13-30 Hz)";
+  }
+  
+  else {
+    return "Gamma (>30 Hz)";
+    
+  }
+  
 }
