@@ -16,6 +16,21 @@ void setup() {
   
   Serial.begin(9600);
 
+    // init info
+  Serial.println("Initializing...");
+  Serial.println("-----------------------------");
+  Serial.print("Number of channels: ");
+  Serial.println(numChannels);
+  Serial.print("Samples per channel: ");
+  Serial.println(samples);
+  Serial.print("Sampling frequency: ");
+  Serial.print(samplingFrequency);
+  Serial.println(" Hz");
+  Serial.print("Free memory intialized: ");
+  Serial.print(freeMemory());
+  Serial.println(" bytes");
+  Serial.println("-----------------------------");
+  
   pinMode(muxControlPin, OUTPUT); // Define MUX control pins as output
   
 }
