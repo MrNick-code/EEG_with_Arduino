@@ -11,7 +11,11 @@ If you either want to suggest changes, discuss or anything else, feel free to co
 
 ## How does the circuit works
 
+The circuit is basically composed of an Arduino UNO as microcontroler, an amplifier, AgCl electrodes, an high and low pass filters, and a some multiplexers. I'll cover the use of them in more detail in the following subsections. To summarize, The filters will be used together as a band pass filter, so we get the output closest to only the frequencies emited by the brain. Those EEG's sign are of the order of microvolts, so we want to amplify them (of course with the amplifier) to get a better reading of 'em. The electrodes, attached to our head, will be used to collect the brain waves. In this case, we first need 3 electrodes. One will be used as ground, so we usually want to put at somewhere with no brain waves emission (like th ear), and the other two set what we call a channel. The more channels we have, the more measuresments we get, but we can't just connect the channels in series or parallel. For this to work, I found that using multiplexers could be a solution. They basically will constantly alternate between which channel the measures are made. Lastly, the Arduino is used for real time measures of this filtered and amplified sign and then we can do any needed analyses with any programming language. For this work, we're only focus on the arduino set up with C++ and python for the data analysis, but other could've be used. 
 
+### Amplifier (AMP)
+
+The AMP used is an [AD620](https://shopee.com.br/Ad620-MV-3-12V-DC-Módulo-Amplificador-De-Tensão-Microvolt-i.569260546.24929264617), which can be powered by a single +5V source and a common ground point. This is an operational AMP, that means, it amplifies the difference between two input signals. We connect the MUX+ to the S+ pin and the MUX- to the S-. Both Vneg and GND pin is going to be connected to the circuit common ground, Vin is connected to Arduino's +5V and Vout will continue to the filters. The AD620 gain is adjusted with an external resistor, and is given by, $G = 49.4 \cdot (1+\dfrac{49.4 k\Omega}{R_{ext}})$.
 
 ## Building the device
 
