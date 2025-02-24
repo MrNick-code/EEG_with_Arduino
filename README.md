@@ -17,6 +17,10 @@ The circuit is basically composed of an Arduino UNO as microcontroler, an amplif
 
 The AMP used is an [AD620](https://shopee.com.br/Ad620-MV-3-12V-DC-Módulo-Amplificador-De-Tensão-Microvolt-i.569260546.24929264617), which can be powered by a single +5V source and a common ground point. This is an operational AMP, that means, it amplifies the difference between two input signals. We connect the MUX+ to the S+ pin and the MUX- to the S-. Both Vneg and GND pin is going to be connected to the circuit common ground, Vin is connected to Arduino's +5V and Vout will continue to the filters. The AD620 gain is adjusted with an external resistor, and is given by, $G = 49.4 \cdot (1+\dfrac{49.4 k\Omega}{R_{ext}})$.
 
+### Band-pass Filter (BPF)
+
+An BPF can be made with an High-pass Filter (HPF) togheter with a Low-pass Filter (LPF). An HPF removes frequencies below an certain limit, allowing just the highest frequences to get through. For EEG's device, the cutoff frequency is usually between 0.5 and 1Hz, to remove frequences related to moviments (for this first approach, I'm just interested in evaluating the device capacity/accuracy). On the other hand, the LPF removes the frequencies above an certain limit. For EEG's device, usually the cutoff frequency is arround 30 to 50Hz, to eliminate the high frequency noise, including eletrical grid interferencies (60Hz). The cutoff frequency can be calculated by, $f_c = \dfrac{1}{2\pi RC}$. The filters are made of an resistor and capacitor (for each filter) direct connected right in between the AMP ouput (Vout) and the Arduino. For a 0.5-50Hz range frequency and, for both filters, an 330k$\Omega$ resistor, we finish it with capacitors of 3kF and 22mF to, respectively, the HPF and the LPF.
+
 ## Building the device
 
 
