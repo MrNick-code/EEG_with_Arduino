@@ -16,9 +16,9 @@ The circuit is basically composed of an Arduino UNO as microcontroler, an amplif
 ### Amplifier (AMP)
 
 The AMP used is an [AD620](https://shopee.com.br/Ad620-MV-3-12V-DC-Módulo-Amplificador-De-Tensão-Microvolt-i.569260546.24929264617), which can be powered by a single +5V source and a common ground point. This is an operational AMP, that means, it amplifies the difference between two input signals. We connect the MUX+ to the S+ pin and the MUX- to the S-. Both Vneg and GND pin is going to be connected to the circuit common ground, Vin is connected to Arduino's +5V and Vout will continue to the filters. The AD620 gain is adjusted with an external resistor, and is given by, 
-\begin{equation}
+```math
   G = 49.4 \cdot (1+\dfrac{49.4 k\Omega}{R_{ext}}).
-\end{equation}
+```
 
 ### Band-pass Filter (BPF)
 
