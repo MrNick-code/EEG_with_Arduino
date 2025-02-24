@@ -34,7 +34,7 @@ The singal reading is made with the electrodes kit [Neurosoft NS-DECL101500-PC](
 
 ## Building the device
 
-An schematic of this first version of the device can be seen next. It was made using the [Software EASY EDA](https://easyeda.com/pt). 
+An schematic of this first version of the device can be seen next. It was made using the [Software EASY EDA](https://easyeda.com). 
 !["device_v1.1 schematic"](images/84d22767233b578902ff28239f4a12a48346c2e7.jpg)
 
 ## Analysis
