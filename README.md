@@ -22,7 +22,11 @@ The AMP used is an [AD620](https://shopee.com.br/Ad620-MV-3-12V-DC-Módulo-Ampli
 
 ### Band-pass Filter (BPF)
 
-An BPF can be made with an High-pass Filter (HPF) togheter with a Low-pass Filter (LPF). An HPF removes frequencies below an certain limit, allowing just the highest frequences to get through. For EEG's device, the cutoff frequency is usually between 0.5 and 1Hz, to remove frequences related to moviments (for this first approach, I'm just interested in evaluating the device capacity/accuracy). On the other hand, the LPF removes the frequencies above an certain limit. For EEG's device, usually the cutoff frequency is arround 30 to 50Hz, to eliminate the high frequency noise, including eletrical grid interferencies (60Hz). The cutoff frequency can be calculated by, $f_c = \dfrac{1}{2\pi RC}$. The filters are made of an resistor and capacitor (for each filter) direct connected right in between the AMP ouput (Vout) and the Arduino. For a 0.5-50Hz range frequency and, for both filters, an 330k$\Omega$ resistor, we finish it with capacitors of 3kF and 22mF to, respectively, the HPF and the LPF.
+An BPF can be made with an High-pass Filter (HPF) togheter with a Low-pass Filter (LPF). An HPF removes frequencies below an certain limit, allowing just the highest frequences to get through. For EEG's device, the cutoff frequency is usually between 0.5 and 1Hz, to remove frequences related to moviments (for this first approach, I'm just interested in evaluating the device capacity/accuracy). On the other hand, the LPF removes the frequencies above an certain limit. For EEG's device, usually the cutoff frequency is arround 30 to 50Hz, to eliminate the high frequency noise, including eletrical grid interferencies (60Hz). The cutoff frequency can be calculated by, 
+```math
+$f_c = \dfrac{1}{2\pi RC}$. 
+```
+The filters are made of an resistor and capacitor (for each filter) direct connected right in between the AMP ouput (Vout) and the Arduino. For a 0.5-50Hz range frequency and, for both filters, an 330k$\Omega$ resistor, we finish it with capacitors of 3kF and 22mF to, respectively, the HPF and the LPF.
 
 ## Building the device
 
