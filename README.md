@@ -26,7 +26,7 @@ An BPF can be made with an High-pass Filter (HPF) togheter with a Low-pass Filte
 ```math
 f_c = \dfrac{1}{2\pi RC}. 
 ```
-The filters are made of an resistor and capacitor (for each filter) direct connected right in between the AMP ouput (Vout) and the Arduino. For a 0.5-50Hz range frequency and, for both filters, an 330k$\Omega$ resistor, we finish it with capacitors of 3kF and 22mF to, respectively, the HPF and the LPF.
+The filters are made of an resistor and capacitor (for each filter) direct connected right in between the AMP ouput (Vout) and the Arduino. For a 0.5-50Hz range frequency and, for both filters, an 330k $\Omega$ resistor, we finish it with capacitors of 3kF and 22mF to, respectively, the HPF and the LPF.
 
 ## Building the device
 
