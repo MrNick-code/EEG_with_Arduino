@@ -1,5 +1,5 @@
 # EEG with Arduino - version 1.0
-Home made EEG utilizing basic electronic components and an Arduino.
+Home made EEG using basic electronic components and an Arduino.
 
 !["First time testing the first version"](images/metest1.jpg)
 
