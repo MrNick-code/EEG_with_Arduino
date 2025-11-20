@@ -1,3 +1,10 @@
+# Basic EEG Prototype - version 1.1
+
+Under development...
+
+---
+---
+
 # EEG with Arduino - version 1.0
 Home made EEG using basic electronic components and an Arduino.
 
